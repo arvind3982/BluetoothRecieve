@@ -8,8 +8,12 @@ void setup()
 }
 void loop()
 {
-  x=Serial1.read();
-  Serial.write(x);
+  if(Serial1.available())
+  {
+    x=Serial1.read();
+    Serial.print(x);
+    delay(1000);
+  }
 }
 
  
